@@ -1,0 +1,271 @@
+:root{
+    /* cores */
+    --cor-fundo-overlay: rgba(10, 10, 12, 0.6);
+    --cor-texto: #f4f2ee;
+    --cor-texto-suave: rgba(244, 242, 238, 0.78);
+    --cor-acento: #e63946;
+    --cor-acento-hover: #ff4d5e;
+    --cor-sombra: rgba(0, 0, 0, 0.45);
+
+    /* tipografia */
+    --fonte-display: 'Playfair Display', 'Times New Roman', Times, serif;
+    --fonte-corpo: 'Georgia', 'Times New Roman', Times, serif;
+
+    /* espaçamento e forma */
+    --raio-card: 18px;
+    --raio-btn: 30px;
+    --duracao: 0.35s;
+    --easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+<<<<<<< HEAD
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+=======
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+>>>>>>> 6f2b0bb19f203f1b164eb5a2534a54dafea60ad4
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(24px, 6vw, 48px) 20px;
+}
+
+/*====VIDEO DE FUNDO====*/
+.bg-video{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* camada escura em cima do vídeo, com leve gradiente
+   para dar profundidade e manter o texto legível */
+.bg-overlay{
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65)),
+        var(--cor-fundo-overlay);
+    z-index: -1;
+}
+
+/*====CABEÇALHO====*/
+header{
+    text-align: center;
+<<<<<<< HEAD
+    color: rgb(239, 237, 240);
+    margin-bottom: 40px;
+=======
+    color: var(--cor-texto);
+    margin-bottom: clamp(32px, 6vw, 56px);
+    max-width: 720px;
+>>>>>>> 6f2b0bb19f203f1b164eb5a2534a54dafea60ad4
+}
+
+header h1{
+    font-family: var(--fonte-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 10px var(--cor-sombra);
+}
+
+header p{
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--cor-texto-suave);
+    line-height: 1.5;
+}
+
+/*====CARDS====*/
+.container-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    width: 100%;
+    max-width: 1100px;
+    justify-items: center;
+}
+
+.card{
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--raio-card);
+    overflow: hidden;
+    box-shadow: 0 8px 24px var(--cor-sombra);
+    cursor: pointer;
+    transition: transform var(--duracao) var(--easing), box-shadow var(--duracao) var(--easing);
+}
+
+/* leve elevação do card inteiro ao passar o mouse */
+.card:hover,
+.card:focus-within{
+    transform: translateY(-8px);
+    box-shadow: 0 18px 36px var(--cor-sombra);
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* essa transição faz a imagem crescer suavemente */
+    transition: transform 0.6s var(--easing);
+}
+
+/* ao passar o mouse, a imagem dá um leve zoom */
+.card:hover img,
+.card:focus-within img{
+    transform: scale(1.12);
+}
+
+/* o conteúdo do card fica escondido embaixo, fora da vista */
+.card-conteudo{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+<<<<<<< HEAD
+    padding: 20px;
+    color: aliceblue;
+    background: linear-gradient(to top rgb(0, 0, 0), transparent
+    );
+    /*começa deslocando para baixo e invisivel*/
+    transform: translateY(60%);
+=======
+    padding: 22px 20px;
+    color: var(--cor-texto);
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 20%, transparent);
+    /* começa deslocando para baixo e invisível */
+    transform: translateY(55%);
+>>>>>>> 6f2b0bb19f203f1b164eb5a2534a54dafea60ad4
+    opacity: 0;
+    transition: transform var(--duracao) var(--easing), opacity var(--duracao) var(--easing);
+}
+<<<<<<< HEAD
+/*ao passar o mouse no card, o conteudo aparece*/
+.card:hover .card-conteudo{
+=======
+
+/* ao passar o mouse ou focar no card, o conteúdo aparece */
+.card:hover .card-conteudo,
+.card:focus-within .card-conteudo{
+>>>>>>> 6f2b0bb19f203f1b164eb5a2534a54dafea60ad4
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-conteudo h3{
+    font-family: var(--fonte-display);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.card-conteudo p{
+    font-size: 0.92rem;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    color: var(--cor-texto-suave);
+}
+
+.btn{
+    display: inline-block;
+<<<<<<< HEAD
+    padding: 8px 19px;
+    background-color: rgb(24, 204, 228);
+=======
+    padding: 9px 22px;
+    background-color: var(--cor-acento);
+>>>>>>> 6f2b0bb19f203f1b164eb5a2534a54dafea60ad4
+    color: white;
+    text-decoration: none;
+    border-radius: var(--raio-btn);
+    font-size: 0.85rem;
+    font-weight: bold;
+<<<<<<< HEAD
+    transition: background 0.3 ease;
+}
+.btn:hover{
+    background: #ff5fdc;
+}
+/*=== RESPONSIVO===*\
+@media(max-width:600px)
+.card{
+      width:90%;
+      heigth: 320px;
+}
+     
+=======
+    letter-spacing: 0.3px;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover{
+    background-color: var(--cor-acento-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(230, 57, 70, 0.4);
+}
+
+.btn:focus-visible{
+    outline: 2px solid var(--cor-texto);
+    outline-offset: 3px;
+}
+
+/* melhora a navegação por teclado: cards focáveis também recebem contorno */
+.card:focus-visible{
+    outline: 2px solid var(--cor-texto);
+    outline-offset: 4px;
+}
+
+/* respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce){
+    *{
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*===RESPONSIVO===*/
+@media (max-width: 900px){
+    .container-cards{
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 600px){
+    .card{
+        max-width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+
+    /* em telas de toque, o conteúdo fica sempre visível
+       já que não existe hover confiável */
+    .card-conteudo{
+        transform: translateY(0);
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 35%, transparent);
+    }
+
+    .card img{
+        transform: none;
+    }
+}
+>>>>>>> 6f2b0bb19f203f1b164eb5a2534a54dafea60ad4
