@@ -1,0 +1,480 @@
+
+:root {
+
+  /* Cores */
+
+  --cor-fundo-overlay: rgba(49, 49, 57, 0.3);
+
+  --cor-texto: #f2df06;
+
+/*cor do texto de dentro do cards*/
+  --cor-texto-suave: rgb(240, 227, 41);
+
+  --cor-acento: #5b3bb1;
+
+  --cor-acento-hover: #5b3bb1;
+
+  --cor-sombra: rgb(9, 8, 9);
+
+  /* Fontes */
+
+  --fonte-display: 'Playfair Display', 'Times New Roman', Times, serif;
+
+  --fonte-corpo: 'Georgia', 'Times New Roman', Times, serif;
+
+  /* Espaçamento */
+
+  --raio-card: 18px;
+
+  --raio-btn: 30px;
+
+  --duracao: 0.35s;
+
+  --easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  min-height: 100vh;
+
+  font-family: var(--fonte-corpo);
+
+  color: var(--cor-texto);
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: clamp(24px, 6vw, 48px) 20px;
+
+}
+
+/* ===== VÍDEO DE FUNDO ===== */
+
+.bg-gif{
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -2;
+
+}
+
+.bg-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.3)),
+
+    var(--cor-fundo-overlay);
+
+  z-index: -1;
+
+}
+
+/* ===== CABEÇALHO ===== */
+
+header {
+
+  text-align: center;
+
+  color: var(--cor-texto);
+
+  margin-bottom: clamp(32px, 6vw, 56px);
+
+  max-width: 720px;
+
+}
+
+header h1 {
+
+  font-family: var(--fonte-display);
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  margin-bottom: 12px;
+
+  text-shadow: 0 2px 10px var(--cor-sombra);
+
+}
+
+header p {
+
+  font-size: clamp(1rem, 2vw, 1.15rem);
+
+  color: white;
+
+  line-height: 1.5;
+
+}
+
+/* ===== CARDS ===== */
+
+.container-cards {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 28px;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  justify-items: center;
+
+}
+
+.card {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 280px;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  border-radius: var(--raio-card);
+
+  box-shadow: 0 8px 24px var(--cor-sombra);
+
+  cursor: pointer;
+
+  transition: transform var(--duracao) var(--easing),
+
+              box-shadow var(--duracao) var(--easing);
+
+}
+
+.card:hover,
+
+.card:focus-within {
+
+  transform: translateY(-8px);
+
+  box-shadow: 0 18px 36px var(--cor-sombra);
+
+}
+
+.card img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform .6s var(--easing);
+
+}
+
+.card:hover img,
+
+.card:focus-within img {
+
+  transform: scale(1.12);
+
+}
+
+.card-conteudo {
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  padding: 22px 20px;
+
+  color: var(--cor-texto);
+
+  background: linear-gradient(to top, rgba(0,0,0,.92) 20%, transparent);
+
+  transform: translateY(55%);
+
+  opacity: 0;
+
+  transition: transform var(--duracao) var(--easing),
+
+              opacity var(--duracao) var(--easing);
+
+}
+
+.card:hover .card-conteudo,
+
+.card:focus-within .card-conteudo {
+
+  transform: translateY(0);
+
+  opacity: 1;
+
+}
+
+.card-conteudo h3 {
+
+  font-family: var(--fonte-display);
+
+  font-size: 1.3rem;
+
+  margin-bottom: 8px;
+
+}
+
+.card-conteudo p {
+
+  font-size: .92rem;
+
+  line-height: 1.4;
+
+  margin-bottom: 16px;
+
+  color: var(--cor-texto-suave);
+
+}
+
+/* ===== BOTÃO ===== */
+
+.btn {
+
+  display: inline-block;
+
+  padding: 9px 22px;
+
+  background-color: var(--cor-acento);
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: var(--raio-btn);
+
+  font-size: .85rem;
+
+  font-weight: bold;
+
+  letter-spacing: .3px;
+
+  transition: background-color .25s ease,
+
+              transform .2s ease,
+
+              box-shadow .25s ease;
+
+}
+
+.btn:hover {
+
+  background-color: var(--cor-acento-hover);
+
+  transform: scale(1.05);
+
+  box-shadow: 0 6px 16px rgba(84, 230, 101, 0.4);
+
+}
+
+.btn:focus-visible {
+
+  outline: 2px solid var(--cor-texto);
+
+  outline-offset: 3px;
+
+}
+
+.card:focus-visible {
+
+  outline: 2px solid var(--cor-texto);
+
+  outline-offset: 4px;
+
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 900px) {
+
+  .container-cards {
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .card {
+
+    max-width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+  }
+
+  .card-conteudo {
+
+    transform: translateY(0);
+
+    opacity: 1;
+
+    background: linear-gradient(to top, rgba(0,0,0,.95) 35%, transparent);
+
+  }
+
+  .card img {
+
+    transform: none;
+
+  }
+
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+
+    transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+
+  /*====================================
+  configuração de novas seções
+  ====================================== */
+  .section {
+    padding: 80px 8%;
+    text-align: center;
+  }
+  .section h2 {
+    font-size: 35px;
+    margin-bottom: 45px;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  }
+
+  /*====================================
+  sobre
+  ====================================== */
+
+  .about.box{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-text h3{
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  about-text p{
+    line-height: 1.8;
+    color: #ddd;
+  }
+
+  about-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+  }
+
+  .about-info div {
+    width: 150px;
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    transition: 0.3s
+  }
+
+  .about-info div:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .about-info span {
+    display: block;
+    font-size: 20px;
+    margin: 8px 0;
+  }
+
+  .abou-info small {
+    color: #bbb;
+  }
+
+  /*=====================================
+  Musicas
+  ======================================= */
+  
+  .music-grid{
+    display: grid;
+    grid-template-columns:
+      repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+  }
+
+  .music-card {
+    position: relative;
+    padding: 30px;
+    min-height: 180px;
+    border-radius: 25px;
+    background: linear-gradient(145deg,rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: 0.4s;
+    overflow: hidden;c
+  }
