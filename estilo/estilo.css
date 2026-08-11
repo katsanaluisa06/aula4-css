@@ -8,7 +8,7 @@
   --cor-texto: #f2df06;
 
 /*cor do texto de dentro do cards*/
-  --cor-texto-suave: rgb(240, 227, 41);
+  --cor-texto-suave: #f88379;
 
   --cor-acento: #5b3bb1;
 
@@ -437,7 +437,7 @@ header p {
 
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(112, 122, 234, 0.683);
 
     transition: 0.3s
   }
@@ -453,8 +453,8 @@ header p {
     margin: 8px 0;
   }
 
-  .aboutc-info small {
-    color: #bbb;
+  .about-info small {
+    color: #f9ff53;
   }
 
   /*=====================================
@@ -472,3 +472,22 @@ header p {
     margin-bottom: 24px !important;
     padding: 15px !important;
   }
+
+  img {
+    width: 200x;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+  }
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
