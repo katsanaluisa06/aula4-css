@@ -370,9 +370,9 @@ header p {
 
 /* ===== ACESSIBILIDADE ===== */
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) 
 
-  * {
+   {
 
     transition-duration: 0.01ms !important;
 
@@ -418,12 +418,12 @@ header p {
     margin-bottom: 20px;
   }
 
-  about-text p{
+  .about-text p{
     line-height: 1.8;
     color: #ddd;
   }
 
-  about-info {
+  .about-info {
     display: flex;
     justify-content: center;
     gap: 25px;
@@ -453,7 +453,7 @@ header p {
     margin: 8px 0;
   }
 
-  .abou-info small {
+  .aboutc-info small {
     color: #bbb;
   }
 
@@ -462,19 +462,13 @@ header p {
   ======================================= */
   
   .music-grid{
-    display: grid;
-    grid-template-columns:
-      repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
   }
 
   .music-card {
-    position: relative;
-    padding: 30px;
-    min-height: 180px;
-    border-radius: 25px;
-    background: linear-gradient(145deg,rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: 0.4s;
-    overflow: hidden;
+    display:block !important;
+    margin-bottom: 24px !important;
+    padding: 15px !important;
   }
