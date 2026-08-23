@@ -489,5 +489,66 @@ img:hover {
 .gallery {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap;s
+}
+
+/*albuns*/
+
+.album {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 700px;
+  text-align: center;
+}
+
+.album img{
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.album h2{
+  margin: 10px 0;
+}
+
+.album h3{
+  margin: 5px 0 15px;
+}
+
+.album p{
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    position: relative;
+    z-index: 10;
+}
+
+#searchInput {
+    width: 350px;
+    padding: 14px 20px;
+    border: 2px solid #ff9acb;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #555;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    width: 400px;
+    border-color: #ff5fa2;
+    box-shadow: 0 0 15px rgba(255, 105, 170, 0.3);
+}
+
+#searchInput::placeholder {
+  color: #999;
 }
