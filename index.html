@@ -12,9 +12,24 @@
 <body>
 
     <!-- vídeo de fundo:-->
-    <img src="img/katseye2.gif" alt="GIF de fundo" class="bg-gif">
+    <img src="img/Post by @kwangyadotcom · 10 images.gif" alt="GIF de fundo" class="bg-gif">
 
+    <header class="hero" id="inicio">
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#integrantes">Integrantes</a>
+            <a href="#musicas">Músicas</a>
+            <a href="galeria">Galeria</a>
+            <a href="#videos">Vídeos</a>
+            <a href="#bias">Bias</a>
+            <a href="#redes">Redes Sociais</a>
+            <a href="#contato">Contato</a>
+            <button id="themeBtn" arial-label="Alternar tema">🌙</button>
+        </nav> 
     
+    </header>
+
     <head>
     <div class="bg-overlay">
         <h1></h1>
@@ -22,15 +37,10 @@
     <div class="bg-overlay"></div>
     </head>
     
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="🔍 Pesquisar...">
-    </div>
-
     <header>
         <h1>KATSEYE WORLD!</h1>
         <p>╰┈➤ Passe o mouse sobre os cards para conhecer o grupo e suas integrantes!♡</p>
     </header>
-
     <div class="container-cards">
         <!-- Card 1 --> 
           <div class="card" tabindex="0">
@@ -93,7 +103,7 @@
         <!--Se desejar adicionar mais cards siga o exemplo !-->
     </div>
 
-    <!-- Seção sobre o KATSEYE -->
+<!-- Seção sobre o KATSEYE -->
     <section id="sobre" class="section">
         
         <div class="about-box">
@@ -103,7 +113,6 @@
                 <p>
                     O grupo composto por seis integrantes de diferentes nacionalidas, trazendo uma mistura de culturas, estilos e personalidades. O KATSEYE é conhecido por sua música cativante, coreografias impressionantes e presença de palco magnética.</p>
 
-                
 <div class="about-info">
                         <div>
                             <span>👑</span>
@@ -307,69 +316,20 @@
 
 ========================= -->
 
-<section id="bias" class="section">
-
-    <h2>⭐ Qual é a sua bias?</h2>
-
-    <p class="subtitle">
-
-        Escolha sua integrante favorita! 💗
-
-    </p>
-
-    <div class="bias-grid">
-
-        <button class="bias-card">
-
-            <span>🐱</span>
-
-            <strong>Sophia</strong>
-
-        </button>
-
-        <button class="bias-card">
-
-            <span>🌸</span>
-
-            <strong>Lara</strong>
-
-        </button>
-
-        <button class="bias-card">
-
-            <span>✨</span>
-
-            <strong>Manon</strong>
-
-        </button>
-
-        <button class="bias-card">
-
-            <span>🦋</span>
-
-            <strong>Daniela</strong>
-
-        </button>
-
-        <button class="bias-card">
-
-            <span>💎</span>
-
-            <strong>Megan</strong>
-
-        </button>
-
-        <button class="bias-card">
-
-            <span>🐰</span>
-
-            <strong>Yoonchae</strong>
-
-        </button>
-
-    </div>
-
-</section>
+<!-- BIAS --> <section id="bias" class="section"> 
+    <div class="section-title"> 
+        <span>⭐</span> <h2>Qual é a sua bias?
+        </h2> <span>⭐</span> </div> 
+        <p class="section-subtitle"> Escolha sua integrante favorita! 💗 </p> 
+        <div class="bias-grid"> 
+            <button class="bias-card" 
+            data-bias="Sophia"> <span>🐱</span> <strong>Sophia</strong> </button> 
+            <button class="bias-card" data-bias="Lara"> <span>🌸</span> <strong>Lara</strong> 
+            </button> <button class="bias-card" data-bias="Manon"> <span>✨</span> <strong>Manon</strong> </button> 
+            <button class="bias-card" data-bias="Daniela"> <span>🦋</span> <strong>Daniela</strong> 
+            </button> <button class="bias-card" data-bias="Megan"> <span>💎</span> <strong>Megan</strong> </button> 
+            <button class="bias-card" data-bias="Yoonchae"> <span>🐰</span> <strong>Yoonchae</strong> </button> 
+        </div> <div id="biasResult" class="bias-result"></div> </section>
 
 <!-- =========================
 
